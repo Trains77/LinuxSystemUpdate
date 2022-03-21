@@ -14,6 +14,7 @@ snap_exists = shutil.which("snap")
 flatpak_exists = shutil.which("flatpak")
 dnf_exists = shutil.which("dnf")
 yum_exists = shutil.which("yum")
+crew_exists = shutil.which("crew")
 
 # this only exists to provide a gurantee non existant path, which is needed in order to properly detect if the actual package managers exist
 dummy = shutil.which("tgaaoiwaga52agaskgawn/joaguiahdnsllaigwhi")
@@ -32,10 +33,14 @@ if root_enabled == True:
         os.system(str(dnf_exists) + " clean all")
         os.system(str(dnf_exists) + " check-update")
         os.system(str(dnf_exists) + " update")
+    elif not crew_exists == dummy: # Chromebrew
+        os.system(str(crew_exists) + "su chronos -c '" + str(crew_exists) + " update'")
+        os.system(str(crew_exists) + "su chronos -c '" + str(crew_exists) + " upgrade'")
     elif not yum_exists == dummy: # Yum
         os.system(str(yum_exists) + " clean all")
         os.system(str(yum_exists) + " check-update")
         os.system(str(yum_exists) + " update")
+    #
     if not flatpak_exists == dummy: # Flatpak
         os.system(str(flatpak_exists) + " update")
     if not snap_exists == dummy: # Snap
