@@ -6,7 +6,7 @@ Run with `python3 update_system.py`
 
 ## Supported package managers
 
-This script supports Apt, Pacman, Yay, DNF, Yum, Chromebrew, Flatpak, and Snap  
+This script supports Apt, Pacman, Yay, DNF, Yum, Crew, Flatpak, and Snap  
 
 Apt: For Debian based distros
 
@@ -14,11 +14,13 @@ Pacman: For ArchLinux based distros (no AUR)
 
 Yay: For ArchLinux based distros, this will be used over pacman (With AUR)
 
-ChromeBrew: For chromebooks in developer mode with Chromebrew installed
+Crew: For chromebooks in developer mode with Chromebrew installed
 
 Yum: For Fedora based distros, Yum will be used over DNF
 
 DNF: For Fedora based distros
+
+Zypper: For OpenSUSE based distros
 
 Flatpak: For all distros with Flatpak installed
 

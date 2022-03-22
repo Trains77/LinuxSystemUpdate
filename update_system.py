@@ -25,7 +25,7 @@ if os_supported == True:
     yum_exists = shutil.which("yum")
     crew_exists = shutil.which("crew")
     yay_exists = shutil.which("yay")
-
+    zypper_exists = shutil.which("zypper")
     # this only exists to provide a gurantee non existant path, which is needed in order to properly detect if the actual package managers exist
     random = open('/dev/random', 'r')
     dummy = shutil.which(str(random.readline))
@@ -50,6 +50,9 @@ if os_supported == True:
             os.system("sudo " + str(yum_exists) + " clean all")
             os.system("sudo " + str(yum_exists) + " check-update")
             os.system("sudo " + str(yum_exists) + " update")
+        elif not zypper_exists == dummy: # Yum
+            os.system("sudo " + str(zypper_exists) + " ref")
+            os.system("sudo " + str(zypper_exists) + " update")
         #
         if not flatpak_exists == dummy: # Flatpak
             os.system("sudo " + str(flatpak_exists) + " update")
