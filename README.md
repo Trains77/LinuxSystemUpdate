@@ -1,9 +1,12 @@
 # Linux Update Script
 
 Updates most packages on a Linux system, it is NOT compatible on MacOS, or Windows  
-This script supports Apt, Pacman, Yay, DNF, Yum, Chromebrew, Flatpak, and Snap  
 
 Run with `python3 update_system.py`
+
+## Supported package managers
+
+This script supports Apt, Pacman, Yay, DNF, Yum, Chromebrew, Flatpak, and Snap  
 
 Apt: For Debian based distros
 
