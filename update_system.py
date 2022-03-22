@@ -37,8 +37,8 @@ if root_enabled == False:
         os.system("sudo " + str(dnf_exists) + " check-update")
         os.system("sudo " + str(dnf_exists) + " update")
     elif not crew_exists == dummy: # Chromebrew
-        os.system(str(crew_exists) + str(crew_exists) + " update'")
-        os.system(str(crew_exists) + str(crew_exists) + " upgrade'")
+        os.system(str(crew_exists) + " update'")
+        os.system(str(crew_exists) + " upgrade'")
     elif not yum_exists == dummy: # Yum
         os.system("sudo " + str(yum_exists) + " clean all")
         os.system("sudo " + str(yum_exists) + " check-update")
