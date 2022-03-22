@@ -20,8 +20,9 @@ yum_exists = shutil.which("yum")
 crew_exists = shutil.which("crew")
 yay_exists = shutil.which("yay")
 
+random = open('/dev/random', 'r')
 # this only exists to provide a gurantee non existant path, which is needed in order to properly detect if the actual package managers exist
-dummy = shutil.which("tgaaoiwaga52agaskgawn/joaguiahdnsllaigwhi")
+dummy = shutil.which(str(random.readline))
 
 # Run update programs
 if root_enabled == False:
