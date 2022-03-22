@@ -2,9 +2,13 @@ import pathlib, os, shutil, getpass
 from pathlib import Path
 # os.getenv("HOME") + "/.librewolf/" + librewolf_instance +  "/favicons.sqlite"
 #isFile = os.path.isfile(librewolf1)
-root_enabled = True
+root_enabled = False
 if getpass.getuser() == "root":
-    print("This script should not be run as root")
+    print("This script should NOT be run as root")
+    if os.getenv("FORCE_ROOT") == "True":
+        root_enabled = False
+    else:
+        root_enabled = True
 
 # Get file paths to the package managers
 apt_exists = shutil.which("apt")
@@ -20,7 +24,7 @@ yay_exists = shutil.which("yay")
 dummy = shutil.which("tgaaoiwaga52agaskgawn/joaguiahdnsllaigwhi")
 
 # Run update programs
-if root_enabled == True:
+if root_enabled == False:
     if not yay_exists == dummy: # Yay
         os.system(str(yay_exists) + " -Syu")
     elif not pacman_exists == dummy: # Pacman
