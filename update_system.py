@@ -45,6 +45,6 @@ if root_enabled == False:
         os.system("sudo " + str(yum_exists) + " update")
     #
     if not flatpak_exists == dummy: # Flatpak
-        os.system(str(flatpak_exists) + " update")
+        os.system("sudo " + str(flatpak_exists) + " update")
     if not snap_exists == dummy: # Snap
-        os.system(str(snap_exists) + " refresh")
+        os.system("sudo " + str(snap_exists) + " refresh")
