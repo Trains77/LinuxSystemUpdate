@@ -1,9 +1,10 @@
-import pathlib, os, shutil, getpass, platform
+import pathlib, os, shutil, getpass, platform, random
 from pathlib import Path
 # os.getenv("HOME") + "/.librewolf/" + librewolf_instance +  "/favicons.sqlite"
 #isFile = os.path.isfile(librewolf1)
 root_enabled = False
 os_supported = True
+random_str = ''
 
 if getpass.getuser() == "root":
     print("This script should NOT be run as root")
@@ -26,9 +27,13 @@ if os_supported == True:
     crew_exists = shutil.which("crew")
     yay_exists = shutil.which("yay")
     zypper_exists = shutil.which("zypper")
-    # this only exists to provide a gurantee non existant path, which is needed in order to properly detect if the actual package managers exist
-    random = open('/dev/random', 'r')
-    dummy = shutil.which(str(random.readline))
+
+
+    # This is used to generate a gurantee non existant path
+    for _ in range(10):
+        random_num = random.randint(0, 77)
+        random_str += (chr(random_num))
+    dummy = shutil.which(random_str)
 
     # Run update programs
     if root_enabled == False:
