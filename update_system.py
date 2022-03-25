@@ -5,7 +5,6 @@ from pathlib import Path
 root_enabled = False
 os_supported = True
 random_str = ''
-
 if getpass.getuser() == "root":
     print("This script should NOT be run as root")
     if os.getenv("FORCE_ROOT") == "True":
@@ -63,3 +62,4 @@ if os_supported == True:
             os.system("sudo " + str(flatpak_exists) + " update")
         if not snap_exists == dummy: # Snap
             os.system("sudo " + str(snap_exists) + " refresh")
+exit()
