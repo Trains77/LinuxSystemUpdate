@@ -1,7 +1,5 @@
 import pathlib, os, shutil, getpass, platform, random
 from pathlib import Path
-# os.getenv("HOME") + "/.librewolf/" + librewolf_instance +  "/favicons.sqlite"
-#isFile = os.path.isfile(librewolf1)
 root_enabled = False
 os_supported = True
 random_str = ''
